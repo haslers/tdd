@@ -15,11 +15,18 @@ public class MarsRoverTest {
     }
 
     @Test
-    public void moveMinimal(){
+    public void moveMinimalForward(){
         MarsRover marsRover = new MarsRover();
         marsRover.move("F");
 
+        assertEquals("0,1,N", marsRover.getPosition());
+    }
 
-        assertEquals("0,1,N", new MarsRover().getPosition());
+    @Test
+    public void moveMinimalBackward() {
+        MarsRover marsRover = new MarsRover();
+        marsRover.move("F");
+        marsRover.move("B");
+        assertEquals("0,0,N", marsRover.getPosition());
     }
 }
